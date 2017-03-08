@@ -1,0 +1,44 @@
+/*
+void filedump(char * p , int len) {
+
+        int c;
+        int count = 0;
+     
+    
+        while(count < len)
+        {   
+                printf("0x%016lX: ", count);  //Print address of the beginning of p. Print every 16 bits
+
+                //Smaller than total length and 小於一行16個
+                for (int i = count; i < len && i < count+16 ; i++)
+                {   
+                        c = p[i]&0xFF; //Get value at p[i]. The &0xFF is to make sure you truncate to 8bits or one byte
+                        printf("%02X ", c);  // Print Each byte as hexadecimal
+                }   
+                //Must have s = len because you will change the total length
+                //This loop is to fill out the space if lenght not meet 16 then print empty string
+                int s = len;
+                while (len < count + 16)
+                {   
+                        s++;
+                        printf("%s ", "  ");
+                }   
+                //Print a space to enter ACSII
+                printf("%s", " ");
+
+                //Print out the ASCII portion
+                for (int i = count; i < len && i < count+16; i++)
+                {   
+                        c = p[i]&0xFF;
+                        printf("%c", (c>=32 && c < 127)?c:'.'); //Print if c between 32 and 127 else print a .
+                }   
+                //Add 16 to go to next line
+                count += 16;
+                //Go to next line and start again
+                printf("\n");
+        }   
+
+}
+
+
+*/
